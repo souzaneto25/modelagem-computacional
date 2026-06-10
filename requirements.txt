@@ -5,3 +5,5 @@ pandas
 matplotlib
 scipy
 sympy
+tensorflow
+pillow

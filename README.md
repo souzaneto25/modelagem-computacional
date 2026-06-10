@@ -2,6 +2,37 @@
 
 Este guia mostra o processo completo para configurar um projeto Python no **WSL** usando **VS Code**, criando um **`.venv`** novo, instalando dependências e conectando o **Jupyter Notebook** ao ambiente correto.
 
+---
+
+## Estrutura do projeto
+
+Repositório de **modelagem computacional** (UFERSA), dividido em duas partes:
+
+### `parte-1/` — Métodos numéricos
+
+Sistemas lineares, interpolação, mínimos quadrados (MMQ) e integração,
+zeros de funções e métodos de Runge-Kutta. Inclui as listas (`scripts/`,
+`scripts-listas/`), as atividades (`scripts-daniel/`), exercícios de slides
+(`scripts-slides/`) e os PDFs das aulas (`slides/`).
+
+### `parte-2/` — Inteligência Artificial e EDPs
+
+| Notebook | Tema |
+|----------|------|
+| `pso.ipynb` | Otimização por Enxame de Partículas (PSO) |
+| `rede-neural.ipynb` | Redes neurais: perceptron, multicamada (XOR), porta OR de 3 entradas |
+| `mdf.ipynb` | Método das Diferenças Finitas (Laplace e Poisson) |
+| `momentos.ipynb` | Método dos Momentos (fio carregado) |
+| `elementos-finitos.ipynb` | Método dos Elementos Finitos (Laplace 2D) |
+
+- 📖 **Teoria de todos os métodos:** [`parte-2/TEORIA.md`](parte-2/TEORIA.md)
+- 🤖 **Guia para IA (PSO/redes neurais):** [`parte-2/AGENTS.md`](parte-2/AGENTS.md)
+
+> A parte-2 usa, além dos pacotes científicos, `tensorflow` e `pillow`
+> (para a rede convolucional). Veja o `requirements.txt`.
+
+---
+
 ## Pré-requisitos
 
 Antes de começar, você precisa ter:
@@ -141,6 +172,8 @@ pandas
 matplotlib
 scipy
 sympy
+tensorflow
+pillow
 ```
 
 Você pode criar esse arquivo com:
@@ -154,6 +187,8 @@ pandas
 matplotlib
 scipy
 sympy
+tensorflow
+pillow
 EOF
 ```
 
@@ -330,6 +365,8 @@ pandas
 matplotlib
 scipy
 sympy
+tensorflow
+pillow
 EOF
 pip install -r requirements.txt
 python -m ipykernel install --user --name modelagem-computacional --display-name "Python (.venv modelagem-computacional)"
