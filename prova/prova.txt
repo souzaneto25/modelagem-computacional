@@ -1,0 +1,37 @@
+Discente: Manoel Antonio de Souza Neto
+
+Questao 1:
+
+Lagrange:
+Vd = 0.555536 V
+I  = 4.4735 mA
+
+Newton:
+Vd = 0.555536 V
+I  = 4.4735 mA
+
+
+Questão 2:
+
+Gauss: [0.99  0.815 1.27 ]
+Cholesky L =
+ [[ 3.16227766  0.          0.        ]
+ [-0.63245553  2.75680975  0.        ]
+ [-0.31622777 -0.79802388  2.29415734]]
+
+
+ Questão 3:
+ a - 0.00525252525252525⋅x3  - 0.0622222222222222⋅x2  + 0.307373737373738⋅x + 0.06121
+ b - I(0.5 V) estimado = 0.2000 mA
+ c - I real      = 2.6 mA; I estimado  = 0.2000 mA; Erro        = 2.4000 mA
+
+
+ Questão 4:
+    n       Quad Gaus       Simp 3/8
+   12     0.19347577     0.19397794
+
+
+Questão 5:
+
+Valor de x(1.5): -0.116701
+Valor de x'(1.5): -2.206294
