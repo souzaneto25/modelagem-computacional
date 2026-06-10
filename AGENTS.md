@@ -1,40 +1,44 @@
 # AGENTS.md
 
-This repo is split into **two parts**:
+Repo: educational Jupyter notebooks for a computational modeling course (UFERSA).
 
-- **`parte-1/`** — numerical methods (linear systems, interpolation, MMQ/integration,
-  root-finding, Runge-Kutta).
+## Structure
+
+- **`parte-1/`** — numerical methods (linear systems, interpolation, MMQ/integration, root-finding, Runge-Kutta).
 - **`parte-2/`** — AI & PDE methods (PSO, neural networks, MDF, Method of Moments, FEM).
-  See [`parte-2/AGENTS.md`](parte-2/AGENTS.md) for AI-specific guidance and
-  [`parte-2/TEORIA.md`](parte-2/TEORIA.md) for the theory of each method.
+  See [`parte-2/AGENTS.md`](parte-2/AGENTS.md) for parte-2 specifics and [`parte-2/TEORIA.md`](parte-2/TEORIA.md) for theory.
+- **`prova/`** — exam notebooks (see Workflow below).
+
+## Rules
+
+- All algorithms implemented **from scratch with NumPy** — do NOT use `scipy.linalg`, `scipy.optimize`, `sklearn`, or similar high-level solvers.
+- Exception: the optional CNN in parte-2 may use `tensorflow`/`keras` (not currently present in codebase).
+- `.venv` and `.ipynb_checkpoints` are gitignored.
 
 ## Running notebooks
 
 ```bash
-# Activate venv first
 source .venv/bin/activate
-
-# Run a single notebook non-interactively
-jupyter nbconvert --to notebook --execute parte-1/scripts/lista_sistemas_lineares.ipynb
+jupyter nbconvert --to notebook --execute parte-1/scripts/lista_sistemas_lineares.ipynb   # headless
 ```
 
-## Key facts
+## Setup
 
-- This repo contains **educational Jupyter notebooks** — no CI/CD, tests, or build system
-- Each notebook defines its own numerical algorithms from scratch using NumPy
-- Do NOT use `scipy.linalg`, `scipy.optimize`, `sklearn` or similar high-level solvers —
-  implement algorithms manually (exception: the optional CNN in parte-2 uses `tensorflow`/`keras`)
-- `.venv` and `.ipynb_checkpoints` are gitignored
-
-## Kernel setup
-
-After creating `.venv`:
 ```bash
+python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
 python -m ipykernel install --user --name modelagem-computacional --display-name "Python (.venv modelagem-computacional)"
 ```
 
-Select the kernel in VS Code: `Ctrl+Shift+P` → "Python: Select Interpreter" → choose the `.venv` kernel.
+## Workflow for exam scripts (`prova/`)
 
-## Reference
+When asked to create exam scripts, follow these rules:
 
-- Full setup guide: see `CLAUDE.md` or `README.md`
+### Output format
+- Jupyter notebooks (`.ipynb`) placed in `prova/`
+- **No markdown cells** — only code cells with minimal inline comments in Portuguese
+- Comments are short directives, e.g. `# aplica gauss-seidel` or `# funcao objetivo`
+- Minimal Portuguese variable/function naming
+
+### Source material
+- Base new scripts on `parte-2/pso.ipynb`, `parte-2/rede-neural.ipynb`, and `parte-2/mdf.ipynb`
+- Theoretical questions draw from `parte-2/elementos-finitos.ipynb`, `parte-2/momentos.ipynb`, `parte-2/mdf.ipynb`
